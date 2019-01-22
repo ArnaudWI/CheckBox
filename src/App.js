@@ -11,6 +11,8 @@ class App extends Component {
       checkbox4: false
     };
 
+  /*fonction check all pour changer les states des 4 checkbox classiques
+  en fonction du state 'checkall' */
   checkedAll = () => {
     this.setState({
       checkall: !this.state.checkall
@@ -30,9 +32,12 @@ class App extends Component {
           checkbox4: false
         })
     }
-    number = 0;
+    number = 0; //reinitialisation du compteur
   }
 
+  /* fonction checkbox 1 avec changement du state approprié + incrémentation
+  ou décrémentation de number en fonction du state 'checkbox1' + condition
+  pour vérifier le compteur à 4 box pour actionner le state 'checkall'*/
   checkedClassique1 = () => {
     this.setState({
       checkbox1: !this.state.checkbox1
@@ -53,6 +58,7 @@ class App extends Component {
     }
   }
 
+  /* fonction checkbox 2 / explication similaire à la fonction checkbox 1 */
   checkedClassique2 = () => {
     this.setState({
       checkbox2: !this.state.checkbox2
@@ -73,6 +79,7 @@ class App extends Component {
     }
   }
 
+  /* fonction checkbox 3 / explication similaire à la fonction checkbox 1 */
   checkedClassique3 = () => {
     this.setState({
       checkbox3: !this.state.checkbox3
@@ -93,6 +100,7 @@ class App extends Component {
     }
   }
 
+  /* fonction checkbox 4 / explication similaire à la fonction checkbox 1 */
   checkedClassique4 = () => {
     this.setState({
       checkbox4: !this.state.checkbox4
@@ -119,23 +127,33 @@ class App extends Component {
       <div style={styles.container}>
         <div style={styles.box}>
           <div>
-            <input name='Check All' type='checkbox' checked={this.state.checkall} onChange={this.checkedAll}/>
+            <input name='Check All' type='checkbox'
+              checked={this.state.checkall} onChange={this.checkedAll}
+            />
             <span style={styles.name}>Check All</span>
           </div>
           <div>
-            <input name='Checkbox 1' type='checkbox' checked={this.state.checkbox1} onChange={this.checkedClassique1}/>
+            <input name='Checkbox 1' type='checkbox'
+              checked={this.state.checkbox1} onChange={this.checkedClassique1}
+            />
             <span style={styles.name}>Checkbox 1</span>
           </div>
           <div>
-            <input name='Checkbox 2' type='checkbox' checked={this.state.checkbox2} onChange={this.checkedClassique2}/>
+            <input name='Checkbox 2' type='checkbox'
+              checked={this.state.checkbox2} onChange={this.checkedClassique2}
+            />
             <span style={styles.name}>Checkbox 2</span>
           </div>
           <div>
-            <input name='Checkbox 3' type='checkbox' checked={this.state.checkbox3} onChange={this.checkedClassique3}/>
+            <input name='Checkbox 3' type='checkbox'
+              checked={this.state.checkbox3} onChange={this.checkedClassique3}
+            />
             <span style={styles.name}>Checkbox 3</span>
           </div>
           <div>
-            <input name='Checkbox 4' type='checkbox' checked={this.state.checkbox4} onChange={this.checkedClassique4}/>
+            <input name='Checkbox 4' type='checkbox'
+              checked={this.state.checkbox4} onChange={this.checkedClassique4}
+            />
             <span style={styles.name}>Checkbox 4</span>
           </div>
         </div>
@@ -144,7 +162,7 @@ class App extends Component {
   }
 }
 
-var styles = {
+const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
